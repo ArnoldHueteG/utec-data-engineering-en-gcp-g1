@@ -1,7 +1,7 @@
 # Laboratorios
 
 1. [Consultando datos publicos](https://cloud.google.com/bigquery/docs/quickstarts/query-public-dataset-console)
-2. [Cargando tablas a Bigquery]
+2. [Cargando tablas a Bigquery](./cargando_tablas_a_bigquery.md)
 3. [Particionando y Clusterizando](https://cloud.google.com/blog/topics/developers-practitioners/bigquery-explained-storage-overview)
 
 # Bonus
