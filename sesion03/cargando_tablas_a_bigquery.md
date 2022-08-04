@@ -15,3 +15,7 @@ gsutil cp BTCUSDT-1m-2022-07.csv gs://rimac-arnold-huete/binance-data/BTCUSDT-1m
 ```bash
 bq load --source_format=CSV --replace --allow_quoted_newlines binance.BTCUSDT gs://rimac-arnold-huete/binance-data/BTCUSDT-1m-2022-07.csv sesion03/schema.json
 ```
+
+4. Cargar la tabla con el trasnfer service.
+
+5. Crear el transfer service con linea de comandos.
