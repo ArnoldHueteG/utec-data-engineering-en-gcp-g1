@@ -9,7 +9,7 @@ gcloud config set project nth-victory-357100
 2. Despliega la funcion con el siguiente comando:
 
 ```bash
-cd sesion04/cloud_functions/daily
+cd $HOME/utec-data-engineering-en-gcp-g1/sesion04/cloud_functions/daily
 gcloud functions deploy python-http-function \
 --gen2 \
 --timeout=3600 \
@@ -24,15 +24,22 @@ gcloud functions deploy python-http-function \
 3. Ejecuta la funcion:
 
 ```bash
-gcloud functions call "python-http-function" --region=us-east1 --gen2
+#gcloud functions call "python-http-function" --region=us-east1 --gen2
+curl \
+  --request GET \
+  --header "Authorization: Bearer $(gcloud auth print-access-token)" \
+  $(gcloud functions describe python-http-function \
+    --region=us-east1 --gen2\
+    --format="value(serviceConfig.uri)")
 ```
 
 4. Abre otra terminal y crea la tabla destino
 
 ```bash
+bq rm -f -t binance.BTCUSDT
 bq mk --table --time_partitioning_field open_time \
     --time_partitioning_type DAY \
-    nth-victory-357100:binance.BTCUSDT sesion04/schema.json
+    binance.BTCUSDT sesion04/schema.json
 ```
 
 5. Ejecuta el transfer:
