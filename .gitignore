@@ -1,0 +1,4 @@
+*.venv*
+*ppt*
+*.cf-venv*
+*local*
