@@ -1,5 +1,9 @@
 # Usando Bigquery Data Transfer
 
+0. Diagrama de Arquitectura de la solucion a implementar.
+
+![alt text](arquitectura.png)
+
 1. Siempre antes de empezar establecer el proyecto en el que se ejecutaran los comandos. Ejemplo:
 
 ```bash
